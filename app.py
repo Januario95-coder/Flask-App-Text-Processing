@@ -1,10 +1,9 @@
-from flask import Flask
-import os
+from flask import jsonify
+
+from init_app import app
 
 
-app = Flask(__name__)
-app.config.from_object(os.environ['APP_SETTINGS'])
-
+from models import Result
 
 
 @app.route('/')
@@ -15,6 +14,15 @@ def hello():
 @app.route('/<name>')
 def hello_name(name):
     return "Hello {}!".format(name)
+    
+    
+@app.route('/user/<name>/<email>')
+def user(name, email):
+    data = {
+        'name': name,
+        'email': email
+    }
+    return jsonify(data)
     
 
 if __name__=='__main__':
