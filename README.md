@@ -1,13 +1,20 @@
-Quick Start
-First Steps
+#Quick Start
+#First Steps
+
 $ pyvenv-3.5 env
+
 $ source env/bin/activate
+
 $ pip install -r requirements.txt
-Set up Migrations
+
+#Set up Migrations
 $ python manage.py db init
+
 $ python manage.py db migrate
+
 $ python manage.py db upgrade
-Run
+
+#Run
 Run each in a different terminal window...
 
 # redis
